@@ -11,3 +11,8 @@ On the validation set the classifier that performed best was the convolutional n
 
 ### b. Classifier Description
 As described earlier, the CNN used in the facial expression recognition task is the encoder of a convolutional auto-encoder. Below is detailed the model specifications, the auto-encoder is simply a mirror of this model. As described previously, unlabeled facial expression images were used to pre-train the network, by using the model as an encoder and its reverse as a decoder. Unlabeled images were forward and backward propagated as a way for the network to initialize parameters which would hopefully represent characteristic of facial expression. All training and assembling of the model was done using an Lua, neural network package, Torch.
+
+###### CNN Model Specifications
+
+**1. Input → Convolution Layer 1 → Max Pooling Layer 1**: Input image of size of 32 × 32 pixel is convolved with a filter of 5 × 5 pixels of depth 96 followed by rectified linear units and then a max pooling that scales the results by 0.5.
+
