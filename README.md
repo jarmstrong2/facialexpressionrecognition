@@ -47,3 +47,17 @@ After training was completed on the auto-encoder, the facial expression recognit
 ![alt tag](https://github.com/jarmstrong2/facialexpressionrecognition/blob/master/images/classificationData.png)
 
 *Figure 3: Training plots, top left is using the augmented dataset, top right is without the augmented set, and the bottom image has weights set with uniformly distributed values.*
+
+**K Nearest Neighbours**
+
+Experiments were conducted using K-NN for varying K and with 10-fold cross-validation. Achieving the best classification rate with K = 5, obtaining a classification rate of 61.03%. Additionally, experiments were conducted with principal component analysis based on the unlabeled set, best results were achieved when using 100 components with classification rate of 58.56% (fig 4).
+
+**Support Vector Machines**
+
+Experiments were conducted using support vector machines with a MATLAB package MSVMpack. Using 10-fold cross-validation and SVM we can achieve a maximum classification rate of 72.66%. Parameters were set to a model by Weston and Watkins using a Gaussian RBF kernel and a C value of 10. Experiments were also done using a PCA from the unlabeled image set, best results were achieved with 1000 principal components with a classification rate of 73.65% (fig 4).
+
+**Overall Comparison**
+
+In comparison with the four other methods evaluated, the convolutional neural network with pretraining and augmented training set performed best (fig 5). This was likely due to the fact that the CNN can produce non-linear class boundaries, and also that CNNs achieve some intuition of relationships among pixels due to filtering small regions in the image space. For instance the convolutions at the first layer in the network will focus on smaller areas of the input image versus layers further on in the network due to max pooling. In comparison to K-NN and SVM which receives the input as a 4092 length vector instead of a 32 x 32 image, separations between classes do not take into account the relation between nearby pixels in the original image, whereas the CNN can.
+
+![alt tag](https://github.com/jarmstrong2/facialexpressionrecognition/blob/master/images/knnsvm.png)
