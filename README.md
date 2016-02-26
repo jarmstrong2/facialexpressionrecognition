@@ -64,9 +64,12 @@ In comparison with the four other methods evaluated, the convolutional neural ne
 
 *Figure 4: Training plots using K-NN and SVM classifiers, top left K-NN with varying K, top right K-NN with varying numbers of principal components, bottom SVM classifier with varying numbers of principal components.*
 
+
 |                       |CNN  |K-NN |K-NN with PCA|SVM  |SVM with PCA|
 |-----------------------|-----|-----|-------------|-----|------------|
-|Classification Rate (%)|84.10|61.03|58.56        |72.66|73.65       |
+|**Classification Rate (%)**|84.10|61.03|58.56        |72.66|73.65       |
+
+*Figure 5: Experiments and classification rates among different classifier methods*
 
 ### d. Conclusion
 
