@@ -28,4 +28,4 @@ Cross validation was not used in determining the best model parameters due to ho
 
 ![alt tag](https://github.com/jarmstrong2/facialexpressionrecognition/blob/master/images/distortedData.png)
 
-**Figure 1**: From left to right, original, negative distortion, position distortion and upscaling.
+*Figure 1*: From left to right, original, negative distortion, position distortion and upscaling.
