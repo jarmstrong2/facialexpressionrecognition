@@ -7,22 +7,22 @@ For this problem I used the Toronto Faces Dataset, where the task was to classif
 
 ** NOTE: Does not contain Toronto Faces Dataset
 
-**baseline with pca**
+**baseline with pca**:
 In this directory the baseline MATLAB code is modified to deal will with varying amounts of principal components, to reduce dimensionality of the data.
 
-**baseline with svm**
+**baseline with svm**:
 Again the base line cross validation is modified to handle SVM classification using the MSVMpack.
 
-**baseline with svm pca**
+**baseline with svm pca**:
 Here is code that can handle cross validation with SVM classification with varying amounts of principal components, to reduce dimensionality of the data.
 
-**distort set**
+**distort set**:
 Code used in augmenting the training set through distortions. Function lensdistort is freely available.
 
-**ae cnn**
+**ae cnn**:
 A convolutional neural network auto-encoder written in Lua for Torch package. Code is divided into data.lua (uploads data), model.lua (builds model), train.lua (trains model with data), driver.lua (creates a pipeline of processes). SpatialUnpooling.lua is used in the decoder portion of the model.
 
-**cnn**
+**cnn**:
 A convolutional neural network, taking as its model the encoder trained from ae cnn. Code is divided into data.lua (uploads data), model.lua (builds model), train.lua (trains model with data), driver.lua (creates a pipeline of processes).
 
 ### a. High-Level Introduction
