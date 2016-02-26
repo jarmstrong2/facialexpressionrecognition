@@ -3,6 +3,28 @@
 ## Introduction
 For this problem I used the Toronto Faces Dataset, where the task was to classify images of faces based on their expression. Additionally, I was given access to 2925 labeled images for training and validation. The goal was to write a program that would achieve the highest accuracy on an unseen test set. In addition to the 2925 labeled data, I was provided with 98,058 unlabeled images that was used to pretrain the CNN (details below). **Achieved 9th of 98 entries, 80.26% classification accuracy https://inclass.kaggle.com/c/csc411f15-facial-expression-prediction.**
 
+## Code Instruction
+
+** NOTE: Does not contain Toronto Faces Dataset
+
+**baseline with pca**
+In this directory the baseline MATLAB code is modified to deal will with varying amounts of principal components, to reduce dimensionality of the data.
+
+**baseline with svm**
+Again the base line cross validation is modified to handle SVM classification using the MSVMpack.
+
+**baseline with svm pca**
+Here is code that can handle cross validation with SVM classification with varying amounts of principal components, to reduce dimensionality of the data.
+
+**distort set**
+Code used in augmenting the training set through distortions. Function lensdistort is freely available.
+
+**ae cnn**
+A convolutional neural network auto-encoder written in Lua for Torch package. Code is divided into data.lua (uploads data), model.lua (builds model), train.lua (trains model with data), driver.lua (creates a pipeline of processes). SpatialUnpooling.lua is used in the decoder portion of the model.
+
+**cnn**
+A convolutional neural network, taking as its model the encoder trained from ae cnn. Code is divided into data.lua (uploads data), model.lua (builds model), train.lua (trains model with data), driver.lua (creates a pipeline of processes).
+
 ### a. High-Level Introduction
 There were essentially three flavours of classifiers that were used as a way to solve the problem of facial expression recognition. (1) The first was required, the baseline, which is essentially a K-NN classifier. In this instance, classification was conducted using 10-fold cross validation with varying K’s, with the facial images at full scale, but normalized. Later classification with K-NN was done with a varying number of principal components derived from the unlabeled set. (2) The second classifier that was used was multi-class support vector machines. It was chosen due to its property of soft-separation of classes and the fact that it is a popular classifier. Similar to (1), training and test images were used at full scale, and classification was done with varying number of principal
 components. (3) The final classification method that was used was a convolutional neural network. It was chosen due to its general success in image classification. The CNN was first pre-trained, by first training a denoising auto-encoder on the unlabeled set, and then using its encoder as a model to train for classification using the training and validation sets.
