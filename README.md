@@ -30,4 +30,12 @@ Cross validation was not used in determining the best model parameters due to ho
 
 *Figure 1: From left to right, original, negative distortion, position distortion and upscaling.*
 
+### c. Results and Comparisons
 
+**Auto-Encoder**
+
+Initially, the auto-encoder was trained using the 98058 unlabeled images. This involved passing a corrupted version of the images through the auto-encoder, and using mean-squared error as a cost funtion comparing the output to the original. Results began to plateau around a cost value of 0.26 at about 145 epochs using a learning rate or 1e-3 (fig 2).
+
+![alt tag](https://github.com/jarmstrong2/facialexpressionrecognition/blob/master/images/autoEncoder.png)
+
+*Figure 2: Auto-encoder plot for learning, each iteration is an epoch.*
