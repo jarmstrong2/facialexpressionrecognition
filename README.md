@@ -61,3 +61,5 @@ Experiments were conducted using support vector machines with a MATLAB package M
 In comparison with the four other methods evaluated, the convolutional neural network with pretraining and augmented training set performed best (fig 5). This was likely due to the fact that the CNN can produce non-linear class boundaries, and also that CNNs achieve some intuition of relationships among pixels due to filtering small regions in the image space. For instance the convolutions at the first layer in the network will focus on smaller areas of the input image versus layers further on in the network due to max pooling. In comparison to K-NN and SVM which receives the input as a 4092 length vector instead of a 32 x 32 image, separations between classes do not take into account the relation between nearby pixels in the original image, whereas the CNN can.
 
 ![alt tag](https://github.com/jarmstrong2/facialexpressionrecognition/blob/master/images/knnsvm.png)
+
+*Figure 4: Training plots using K-NN and SVM classifiers, top left K-NN with varying K, top right K-NN with varying numbers of principal components, bottom SVM classifier with varying numbers of principal components.*
