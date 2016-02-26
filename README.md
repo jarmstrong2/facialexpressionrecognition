@@ -12,7 +12,12 @@ On the validation set the classifier that performed best was the convolutional n
 ### b. Classifier Description
 As described earlier, the CNN used in the facial expression recognition task is the encoder of a convolutional auto-encoder. Below is detailed the model specifications, the auto-encoder is simply a mirror of this model. As described previously, unlabeled facial expression images were used to pre-train the network, by using the model as an encoder and its reverse as a decoder. Unlabeled images were forward and backward propagated as a way for the network to initialize parameters which would hopefully represent characteristic of facial expression. All training and assembling of the model was done using an Lua, neural network package, Torch.
 
-###### CNN Model Specifications
+**CNN Model Specifications**
 
 **1. Input → Convolution Layer 1 → Max Pooling Layer 1**: Input image of size of 32 × 32 pixel is convolved with a filter of 5 × 5 pixels of depth 96 followed by rectified linear units and then a max pooling that scales the results by 0.5.
-
+**2. Max Pooling Layer 1 → Convolution Layer 2**: Input which is now 14 × 14 × 96, is convolved with a filter of size 3, and depth 128 followed by rectified linear units.
+**3. Convolution Layer 2 → Convolution Layer 3**: Input which is now 12 × 12 × 128, is convolved with a filter of size 3, and depth 128 followed by rectified linear units.
+**4. Convolution Layer 3 → Convolution Layer 4**: Input which is now 10 × 10 × 128, is convolved with a filter of size 3, and depth 128 followed by rectified linear units.
+**5. Convolution Layer 4 → Convolution Layer 5 → Max Pooling Layer 2**: Input which is now 8 × 8 × 128, is convolved with a filter of size 3, and depth 128 followed by rectified linear units. This is followed by max pooling that scales the result by 0.5. 
+**6. Convolution Layer 5 → Fully Connected Layer 1**: Input propogates through 2048 (4 * 4 * 128) input units fully connected to 1024 output units followed by rectified linear units.
+**7. Fully Connected Layer 1 → Fully Connected Layer 2**: Input propogates through 1024 input units fully connected to 7 units.
