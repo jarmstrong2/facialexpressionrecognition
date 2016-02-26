@@ -39,3 +39,11 @@ Initially, the auto-encoder was trained using the 98058 unlabeled images. This i
 ![alt tag](https://github.com/jarmstrong2/facialexpressionrecognition/blob/master/images/autoEncoder.png)
 
 *Figure 2: Auto-encoder plot for learning, each iteration is an epoch.*
+
+**Facial Expression Recognition Model**
+
+After training was completed on the auto-encoder, the facial expression recognition model was developed using the encoder from the auto-encoder and applying a layer of log soft-max, so that the output could be formatted as a probability of selecting among 7 facial expressions given some 32 × 32 image. Also, a negative log-likelihood was used as an objective function between one-of-k targets and model output. The model was trained using an augmented training set and validation set. There were significant differences between training using the augmented training set, and then training without the augmented set. The classification rate on the validation set using an augmented training set was 84.10%, while without tha augmented set validation achieved 78.10% (fig 3). Additional experiments were conducted to determine if the auto-encoder was successful, for example examining whether setting the weights uniformly will perform the same as the model initilized by the auto-encoder. It turns out that setting the weights uniformly between -0.005 and 0.005, but using the augmented set, achieves a classification rate of 81.80% (fig 3). All versions of the model were trained with a learning rate of 1e-3, and using dropout for 50% of weights in the fully connected layer. Comparing all plots, the model with parameters set by the auto-encoder and using the augmented set, appears to have less variability in validation classification error, and has a general trend toward a classification error of 0.2.
+
+![alt tag](https://github.com/jarmstrong2/facialexpressionrecognition/blob/master/images/classificationData.png)
+
+*Figure 3: Training plots, top left is using the augmented dataset, top right is without the augmented set, and the bottom image has weights set with uniformly distributed values.*
