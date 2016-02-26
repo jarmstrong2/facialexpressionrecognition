@@ -64,6 +64,10 @@ In comparison with the four other methods evaluated, the convolutional neural ne
 
 *Figure 4: Training plots using K-NN and SVM classifiers, top left K-NN with varying K, top right K-NN with varying numbers of principal components, bottom SVM classifier with varying numbers of principal components.*
 
+|                       |CNN  |K-NN |K-NN with PCA|SVM  |SVM with PCA|
+|_______________________|_____|_____|_____________|_____|____________|
+|Classification Rate (%)|84.10|61.03|58.56        |72.66|73.65       |
+
 ### d. Conclusion
 
 The convolutional neural network trained with an augmented set and pretrained with an auto encoder achieved a reasonable result of 80.36% classification rate on the combined hidden and public datasets. The result, I believe could have been higher. If you refer to figure 3, the model appears to overfit quickly. For example, in all experiments the classification rate for training reaches close to 100% before 100 epochs. This is concerning because there is about a 20% percent difference in rates between the validation set and training set, which is most likely overfitting. The use of dropout in the model was not enough to slow the slope of the training curve. One solution may have been to use a semi-supervised method, where we add to the data, in small amounts, the unlabeled images, but labeled using the results of the current model at that iteration of training3. Certainly, in comparison to K-NN and SVM classifiers a deep CNN would appear to be best for this classification task. Although this specific model was not ideally constructed, there is some evidence that with better tuning, use of more regularization, and perhaps better use of the unlabeled set that classfication could have been improved.
